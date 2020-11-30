@@ -1,0 +1,145 @@
+<script>
+    !(function (e) {
+        var t = {};
+        function n(r) {
+            if (t[r]) return t[r].exports;
+            var o = (t[r] = { i: r, l: !1, exports: {} });
+            return (
+                e[r].call(o.exports, o, o.exports, n),
+                (o.l = !0),
+                o.exports
+            );
+        }
+        (n.m = e),
+            (n.c = t),
+            (n.d = function (e, t, r) {
+                n.o(e, t) ||
+                    Object.defineProperty(e, t, {
+                        enumerable: !0,
+                        get: r,
+                    });
+            }),
+            (n.r = function (e) {
+                "undefined" != typeof Symbol &&
+                    Symbol.toStringTag &&
+                    Object.defineProperty(e, Symbol.toStringTag, {
+                        value: "Module",
+                    }),
+                    Object.defineProperty(e, "__esModule", {
+                        value: !0,
+                    });
+            }),
+            (n.t = function (e, t) {
+                if ((1 & t && (e = n(e)), 8 & t)) return e;
+                if (4 & t && "object" == typeof e && e && e.__esModule)
+                    return e;
+                var r = Object.create(null);
+                if (
+                    (n.r(r),
+                    Object.defineProperty(r, "default", {
+                        enumerable: !0,
+                        value: e,
+                    }),
+                    2 & t && "string" != typeof e)
+                )
+                    for (var o in e)
+                        n.d(
+                            r,
+                            o,
+                            function (t) {
+                                return e[t];
+                            }.bind(null, o)
+                        );
+                return r;
+            }),
+            (n.n = function (e) {
+                var t =
+                    e && e.__esModule
+                        ? function () {
+                              return e.default;
+                          }
+                        : function () {
+                              return e;
+                          };
+                return n.d(t, "a", t), t;
+            }),
+            (n.o = function (e, t) {
+                return Object.prototype.hasOwnProperty.call(e, t);
+            }),
+            (n.p = ""),
+            n((n.s = 0));
+    })([
+        function (e, t) {
+            !(function (e, t) {
+                const n = 100;
+                var r = t.documentElement,
+                    o = e.devicePixelRatio || 1;
+                function i() {
+                    var e = r.clientWidth,
+                        o = r.clientHeight,
+                        i = Number(r.getAttribute("maxView")) || 768;
+                    (rem_val =
+                        (e > i ? i : e) / (PAGE_DESIGN.width / n)),
+                        (r.style.fontSize = rem_val + "px");
+                    let u = setTimeout(function () {
+                        clearTimeout(u),
+                            (function (e, o) {
+                                var i = t.createElement("div");
+                                (i.style.width = "1.4rem"),
+                                    (i.style.height = "0"),
+                                    t.body.appendChild(i);
+                                var u =
+                                        (1.4 * n * o) /
+                                        PAGE_DESIGN.width,
+                                    l = i.clientWidth / u;
+                                (l > 1.2 || l < 0.8) &&
+                                    ((r.style.fontSize = e / l + "px"),
+                                    t.body.removeChild(i));
+                            })(rem_val, e);
+                    }, 20);
+                    if ("fullpage" == PAGE_DESIGN.model)
+                        var l = setTimeout(function () {
+                            clearTimeout(l), (l = null);
+                            var e = r.offsetHeight;
+                            e <= o ||
+                                ((rem_val *= 1 - (e - o) / e),
+                                (r.style.fontSize = rem_val + "px"));
+                        }, 16);
+                }
+                (e.PAGE_DESIGN = {}),
+                    Object.defineProperty(e.PAGE_DESIGN, "width", {
+                        configurable: !1,
+                        enumerable: !0,
+                        get: function () {
+                            return width;
+                        },
+                        set: function (e) {
+                            (width = e), i();
+                        },
+                    }),
+                    Object.defineProperty(e.PAGE_DESIGN, "model", {
+                        configurable: !1,
+                        enumerable: !0,
+                        get: function () {
+                            return model;
+                        },
+                        set: function (e) {
+                            (model = e), "fullpage" == e && i();
+                        },
+                    }),
+                    (function e() {
+                        t.body
+                            ? (t.body.style.fontSize = "16px")
+                            : t.addEventListener("DOMContentLoaded", e);
+                    })(),
+                    (PAGE_DESIGN.model = "normal"),
+                    (PAGE_DESIGN.width = 750),
+                    e.addEventListener("resize", i),
+                    e.addEventListener("pageshow", function (t) {
+                        e.persisted && i();
+                    }),
+                    o >= 2 && t.documentElement.setAttribute("dpr", o);
+            })(window, document);
+        },
+    ]);
+</script>

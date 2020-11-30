@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--#include virtual="/mb/inc/check_oauth.shtml" -->
+        <!--#include virtual="/mb/v4/inc/_meta.shtml" -->
+        <!--#include virtual="/mb/action/common/inc/common.shtml" -->
+        <link rel="stylesheet" type="text/css" href="css/index.css?{md5}" />
+        <link rel="stylesheet" href="css/swiper-bundle.min.css"></link>
+        <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js?_bid=3977"></script>
+        <script type="text/javascript">
+            var G_timePoint = [];
+            G_timePoint[0] = new Date().getTime();
+        </script>
+    </head>
+    <body class="show-body-loading page-yqt">
+        <!--#include virtual="/mb/action/thanksgiving2020/inc/rem.shtml" -->
+        <!-- 屏蔽左下角全局导航 -->
+        <input type="hidden" class="js-widgets-back-home" data-show="false" />
+
+        <!--#include virtual="/mb/action/thanksgiving2020/inc/page-loading.shtml" -->
+
+        <div class="page-index" id="vueBox">
+
+
+            <div style="display: none;">
+                <fit-qr-code
+                    ref="qrcodeUrl"
+                    code="http://qian.tenpay.com/mb/v4/"
+                    :width=180 :height=180>
+                </fit-qr-code>
+            </div>
+
+            <fit-dialog class="rule-dialog" ref="ruleDialog">
+                <div class="rule-dialog__content">
+                    <p>【一起感恩一起投】</p>
+                    <p>一、 活动规则</p>
+                        <p class="indent">1、 活动时间：2020年11月23日-11月30日 24：00。</p>
+                        <p class="indent">2、 本活动仅限部分受邀用户参与（以下简称“用户”），活动奖励发放按照本规则及<a href="https://qian.tenpay.com/resources/pages/mb/d10c6cd82.shtml">《营销活动通用规则》</a>执行。</p>
+                        <p class="indent">3、 同一用户（同一微信号/手机号/身份证）活动期间，只能参与一次活动。</p>
+                        <p class="indent">4、 用户获得的感谢金红包在有效期内可用于申购指定基金组合，申购成功并确认份额后，感谢金红包将在七个工作日内转化为相应金额的余额+。提示：一笔申购最多只能使用一个红包。使用此代金券申购基金组合的未开户用户需先行开立基金账户并进行风险测评。基金有风险，投资需谨慎。</p>
+                        <p class="indent">5、 本活动奖品均由理财通平台合作基金公司提供。奖品使用细则可在【理财通】-【我的】-【红包卡券】进行查看和使用。</p>
+                        <p class="indent">6、 对用户在活动中以及奖品领取和使用过程中的违规行为，活动举办方有权收回奖品，并撤销尚未达成的相关交易，并保留法律追责的权利。</p>
+                        <p class="indent">7、 非中防刷导致奖励未到账，将在7个工作日内补发，请用户耐心等待。</p>
+                    <p>二、 风险提示</p>
+                        <p class="indent">1、 本活动由上海腾富金融信息服务有限公司举办，本活动不构成举办方任何投资建议或承诺。用户在使用奖品或申购任何金融产品前应认真阅读与产品相关的说明和法律文件，确认知晓并理解该产品全部特征与相关风险，在符合自身风险承受能力的前提下，谨慎投资。</p>
+                        <p class="indent">2、 本活动涉及的基金销售服务由腾安基金销售（深圳）有限公司提供，基金投资人请详阅基金合同等法律文件，在投资前请确认知晓并理解产品的收益、风险和损失，并结合自身风险承受能力，进行审慎投资决策。基金有风险，投资需审慎。腾安基金销售（深圳）有限公司不对您的投资收益做任何保证和承诺。</p>
+                        <p class="indent">3、 如还有其他疑问，请联系线上客服。</p>
+                    <p>三、 特别说明</p>
+                        <p class="indent">1、 如出现不可抗力或情势变更的情况（包括自然灾害事件，活动受政府机关指令需要停止举办或调整的，活动遭受网络攻击或因系统故障需要暂停举办等），以及因用户涉嫌反洗钱、风险交易行为或违规行为而被取消活动资格和权益的，本活动举办主体免于承担责任。</p>
+                        <p class="indent">2、 活动规则的修改：为了进一步改善您的体验或满足监管要求，上海腾富金融信息服务有限公司可能会持续开发新服务或完善用户体验，为您提供版本升级、功能升级等服务和内容更新，为此，您同意上海腾富金融信息服务有限公司有权不时对本活动规则内容进行变更，并以公告的方式予以告知，无需另行单独通知您；若您在本业务规则内容变更公告后继续使用本活动规则所述服务的，表示您已充分阅读、理解并接受修改后的活动规则的内容，也将遵循修改后的活动规则内容使用本服务。</p>
+                        <p class="indent">3、 <a href="https://qian.tenpay.com/resources/pages/mb/d10c6cd82.shtml">《营销活动通用规则》</a>（简称“通用规则”）是本规则的重要组成部分，通用规则与上述规则共同构成本次活动规则的全部内容。用户参加本活动的行为视为同意并遵守上述规则及通用规则。本规则未尽事宜，以举办方发布的其他各项协议、规则、公告的相关规定为准。本规则与举办方发布的其他各项协议、规则、公告的相关规定内容不一致的，以本规则为准。</p>
+                    <p>四、 本活动规则自发布之日起生效。</p>
+                </div>
+            </fit-dialog>
+        </div>
+
+        <!--#include virtual="/mb/v4/inc/lib.shtml" -->
+
+        <!-- 初始化测速 -->
+        <script>
+            window.aegisMonitor = null;
+            (function () {
+                aegisMonitor = new Aegis({
+                    id: 3147, // 项目ID
+                    reportApiSpeed: true, // 接口测速
+                    reportAssetSpeed: true, // 静态资源测速
+                });
+            })();
+        </script>
+        <script src="/mb/action/thanksgiving2020/js/vue.min.js"></script>
+        <script src="/mb/action/thanksgiving2020/js/lottie.min.js"></script>
+        <script src="/mb/action/thanksgiving2020/js/swiper-bundle.min.js"></script>
+        <script src="/mb/action/thanksgiving2020/js/xss.js"></script>
+        <script src="/mb/action/thanksgiving2020/js/hammer.min.js"></script>
+        <!-- <script src="/mb/action/thanksgiving2020/js/tween.umd.js"></script> -->
+        <!-- threejs -->
+        <!-- <script src="/mb/action/thanksgiving2020/js/three.min.js"></script> -->
+        <!-- components -->
+        <!-- <script src="/mb/action/thanksgiving2020/inc/js/components-index.umd.js?{md5}"></script>  -->
+        <script src="/mb/action/thanksgiving2020/inc/js/notice-bar.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/drawer.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/red-env.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/letter.umd.js?{md5}"></script>
+        <!-- <script src="/mb/action/thanksgiving2020/inc/js/gallery.umd.js?{md5}"></script> -->
+        <!-- <script src="/mb/action/thanksgiving2020/inc/js/m-gallery.umd.js?{md5}"></script> -->
+        <script src="/mb/action/thanksgiving2020/inc/js/carousel.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/prize-stripe.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/poster-share.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/fit-dialog.umd.js?{md5}"></script>
+        <script src="/mb/action/thanksgiving2020/inc/js/fit-qr-code.umd.js?{md5}"></script>
+
+        <script type="text/javascript" data-role="script">
+            var ua = navigator.userAgent;
+            window.isIOS = /iphone|ipad/i.test(ua);
+            window.isAndroid = /android/i.test(ua);
+            var url = __pkg("/mb/action/thanksgiving2020/js/index.js?{md5}");
+            var mixins = __pkg('/mb/action/thanksgiving2020/js/mixins.js?{md5}');
+            var html2canvas = "/mb/action/thanksgiving2020/js/html2canvas.js";
+            loadPageScript(
+                "/mb/action/thanksgiving2020/js/index",
+                [url, mixins, html2canvas],
+                function (page) {}
+            );
+        </script>
+        
+    </body>
+</html>
