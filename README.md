@@ -8,8 +8,6 @@
 
 拷貝完之后替换模版中路徑名稱成自己的活动名称
 
-需要替換的地方僅以下
-
 ```index.shtml
 <script src="/mb/action/活动名称/js/vue.min.js"></script>
 <!-- components -->
@@ -40,7 +38,7 @@ define("/mb/action/活动名称/js/index", function(require, exports) {
         })
     }
 });
-``
+```
 
 执行 `tnpm install` 安装开发时所需依赖
 
