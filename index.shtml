@@ -5,31 +5,29 @@
         <!--#include virtual="/mb/v4/inc/_meta.shtml" -->
         <!--#include virtual="/mb/action/common/inc/common.shtml" -->
         <link rel="stylesheet" type="text/css" href="css/index.css?{md5}" />
-        <link rel="stylesheet" href="css/swiper-bundle.min.css"></link>
         <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js?_bid=3977"></script>
         <script type="text/javascript">
             var G_timePoint = [];
             G_timePoint[0] = new Date().getTime();
         </script>
     </head>
-    <body class="show-body-loading page-yqt">
-        <!--#include virtual="/mb/action/thanksgiving2020/inc/rem.shtml" -->
+    <body class="show-body-loading page-yqt-action">
+        <!--#include virtual="/mb/action/the_action/inc/rem.shtml" -->
         <!-- 屏蔽左下角全局导航 -->
         <input type="hidden" class="js-widgets-back-home" data-show="false" />
 
-        <!--#include virtual="/mb/action/thanksgiving2020/inc/page-loading.shtml" -->
+        <!--#include virtual="/mb/action/the_action/inc/page-loading.shtml" -->
 
         <div class="page-index" id="vueBox">
-
-
-            <div style="display: none;">
-                <fit-qr-code
-                    ref="qrcodeUrl"
-                    code="http://qian.tenpay.com/mb/v4/"
-                    :width=180 :height=180>
-                </fit-qr-code>
+            <hey-there :action="doAction"></hey-there>
+            <fit-qr-code
+                ref="qrcodeUrl"
+                code="https://www.tencentwm.com/mb/v4/index.shtml"
+                :width=180 :height=180>
+            </fit-qr-code>
+            <div style="padding: 1rem 0; text-align: center;">
+                <button @click="handleRuleShow">活动规则</button>
             </div>
-
             <fit-dialog class="rule-dialog" ref="ruleDialog">
                 <div class="rule-dialog__content">
                     <p>【一起感恩一起投】</p>
@@ -67,38 +65,21 @@
                 });
             })();
         </script>
-        <script src="/mb/action/thanksgiving2020/js/vue.min.js"></script>
-        <script src="/mb/action/thanksgiving2020/js/lottie.min.js"></script>
-        <script src="/mb/action/thanksgiving2020/js/swiper-bundle.min.js"></script>
-        <script src="/mb/action/thanksgiving2020/js/xss.js"></script>
-        <script src="/mb/action/thanksgiving2020/js/hammer.min.js"></script>
-        <!-- <script src="/mb/action/thanksgiving2020/js/tween.umd.js"></script> -->
-        <!-- threejs -->
-        <!-- <script src="/mb/action/thanksgiving2020/js/three.min.js"></script> -->
+        <script src="/mb/action/the_action/js/vue.min.js"></script>
         <!-- components -->
-        <!-- <script src="/mb/action/thanksgiving2020/inc/js/components-index.umd.js?{md5}"></script>  -->
-        <script src="/mb/action/thanksgiving2020/inc/js/notice-bar.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/drawer.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/red-env.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/letter.umd.js?{md5}"></script>
-        <!-- <script src="/mb/action/thanksgiving2020/inc/js/gallery.umd.js?{md5}"></script> -->
-        <!-- <script src="/mb/action/thanksgiving2020/inc/js/m-gallery.umd.js?{md5}"></script> -->
-        <script src="/mb/action/thanksgiving2020/inc/js/carousel.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/prize-stripe.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/poster-share.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/fit-dialog.umd.js?{md5}"></script>
-        <script src="/mb/action/thanksgiving2020/inc/js/fit-qr-code.umd.js?{md5}"></script>
+        <script src="/mb/action/the_action/inc/js/fit-dialog.umd.js?{md5}"></script>
+        <script src="/mb/action/the_action/inc/js/fit-qr-code.umd.js?{md5}"></script>
+        <!-- <script src="/mb/action/the_action/inc/js/page-index.umd.js?{md5}"></script> -->
+        <script src="/mb/action/the_action/inc/js/hey-there.umd.js?{md5}"></script>
 
         <script type="text/javascript" data-role="script">
             var ua = navigator.userAgent;
             window.isIOS = /iphone|ipad/i.test(ua);
             window.isAndroid = /android/i.test(ua);
-            var url = __pkg("/mb/action/thanksgiving2020/js/index.js?{md5}");
-            var mixins = __pkg('/mb/action/thanksgiving2020/js/mixins.js?{md5}');
-            var html2canvas = "/mb/action/thanksgiving2020/js/html2canvas.js";
+            var url = __pkg("/mb/action/the_action/js/index.js?{md5}");
             loadPageScript(
-                "/mb/action/thanksgiving2020/js/index",
-                [url, mixins, html2canvas],
+                "/mb/action/the_action/js/index",
+                [url],
                 function (page) {}
             );
         </script>

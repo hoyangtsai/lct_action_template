@@ -1,0 +1,130 @@
+body.page-yqt-action .pop-set .pop-set-close {
+  width: .84rem;
+  height: .84rem;
+  background-size: .26rem auto;
+}
+
+body.page-yqt-action .pop-set .pop-set-title {
+  padding: 0.56rem 0.4rem 0;
+  font-size: 0.36rem;
+}
+
+body.page-yqt-action .pop-set .pop-set-cnt {
+  padding: 0.4rem 0.48rem 0.3rem;
+  font-size: 0.28rem;
+  line-height: 0.4rem;
+}
+
+body.page-yqt-action .pop-set .pop-operate {
+  height: 1rem;
+  line-height: 1rem;
+}
+
+body.page-yqt-action .pop-set .pop-operate>a {
+  font-size: 0.36rem;
+}
+
+body.page-yqt-action #mod_toast_pop .lct-mod-toast-cnt {
+  padding: .36rem;
+  min-height: 1.52rem;
+}
+
+body.page-yqt-action #mod_toast_pop .lct-mod-toast-cnt .lct-mod-toast-warn {
+  width: 1.06rem;
+  height: 1.06rem;
+}
+
+body.page-yqt-action #mod_toast_pop .lct-mod-toast-cnt .lct-mod-toast-ok {
+  width: 1rem;
+  height: .72rem;
+}
+
+body.page-yqt-action #mod_toast_pop .lct-mod-toast-cnt .lct-mod-toast-loading {
+  width: .64rem;
+  height: .64rem;
+}
+
+body.page-yqt-action #mod_toast_pop .lct-mod-toast-cnt .txt {
+  font-size: .28rem;
+  padding-top: .36rem;
+}
+
+html, body {
+  height: auto;
+  height: initial;
+}
+
+.rule-dialog {
+  display: none;
+}
+
+.rule-dialog.fit-dialog .dlg-content {
+  padding: .32rem .48rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  max-height: calc(100% - 1.04rem);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.rule-dialog.fit-dialog .dlg-main {
+  width: 80%;
+  border-radius: .08rem;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: visible;
+  overflow: initial;
+}
+
+.rule-dialog.fit-dialog .dlg-title {
+  font-size: .36rem;
+  color: #000000;
+  line-height: .54rem;
+  font-weight: 400;
+  margin-bottom: .24rem;
+  padding-bottom: 0;
+}
+
+.rule-dialog.fit-dialog .dlg-text {
+  text-align: left;
+  font-size: .28rem;
+  color: #000000;
+  color: rgba(0, 0, 0, .40);
+  line-height: .42rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  max-height: calc(100% - 0.78rem);
+}
+
+.rule-dialog.fit-dialog .dlg-text div {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rule-dialog.fit-dialog .dlg-text div::-webkit-scrollbar {
+  display: none;
+}
+
+.rule-dialog.fit-dialog .dlg-text .indent {
+  text-indent: 1em;
+}
+
+.rule-dialog.fit-dialog .dlg-btns button {
+  height: 1.04rem;
+}

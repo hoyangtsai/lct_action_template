@@ -51,7 +51,6 @@ task('pack', async () => {
             allowEmpty: true,
             ignore: [
                 './inc/js/gallery.umd.js',
-                './inc/js/m-gallery.umd.js'
             ]
         })
         .pipe(concat(`components-${basename}.umd.js`))
@@ -64,7 +63,7 @@ task('watch', () => {
     watch(vueComponents, 
         { 
             ignoreInitial: false,
-            // events: ['add', 'change']
+            // events: ['add', 'change', 'unlink']
         },
         series('vue'));
 });

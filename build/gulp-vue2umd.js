@@ -35,22 +35,24 @@ module.exports = function() {
     if (file.isNull() || file.isDirectory()) {
       callback(null, file);
     }
+    // get component file name without extension
     const fileBase = path.basename(file.path, '.vue');
-
+    // create file meta cache
     if (!fileMeta[fileBase]) {
       fileMeta[fileBase] = {
         md5: '',
         requireBy: [],
       };
     }
-
+    // get component path
     const fileDir = path.dirname(file.path);
-
+    // read component file content in order to get import components
     const fileContent = fs.readFileSync(file.path, 'utf8');
     const importRegex = /import\s+(\w+)\s+from\s+.+(\/.*)(?=\/index)/gmi;
     const imports = fileContent.match(importRegex) || [];
-
+    // record each import
     await imports.forEach((imp) => {
+      // chop import path and ensure starting with one or two dot to avoid getting node_modules as import components
       const matches = /from.*('|")\.{1,2}(.+)/.exec(imp);
       
       if (matches.length > 0) {
@@ -70,18 +72,19 @@ module.exports = function() {
       }
     });
 
+    // read current component md5
     const hash = md5File.sync(file.path);
 
+    // not compile yet
     if (!fileMeta[fileBase].md5) {
       await outputEntry(file.path, fileMeta);
       callback(null, file);
-    } else if (fileMeta[fileBase].md5 !== hash) {
+    } else if (fileMeta[fileBase].md5 !== hash) { // if md5 differenct from the last compile
       await outputEntry(file.path, fileMeta);
       callback(null, file);
 
-      if (fileMeta[fileBase].requireBy) {
+      if (fileMeta[fileBase].requireBy) { // also compile its parents
         fileMeta[fileBase].requireBy.forEach((r) => {
-          console.log('r =>', r);
           outputEntry(r, fileMeta);
         });
       }

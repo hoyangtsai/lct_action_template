@@ -1,1 +1,55 @@
 @import "_reset-lct.pcss";
+
+html, body {
+    height: initial;
+}
+
+.rule-dialog {
+    display: none;
+    &.fit-dialog .dlg-content {
+        padding: .32rem .48rem;
+        flex: 1;
+        max-height: calc(100% - 1.04rem);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+    &.fit-dialog .dlg-main {
+        width: 80%;
+        border-radius: .08rem;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: initial;
+    }
+    &.fit-dialog .dlg-title {
+        font-size: .36rem;
+        color: #000000;
+        line-height: .54rem;
+        font-weight: 400;
+        margin-bottom: .24rem;
+        padding-bottom: 0;
+    }
+    &.fit-dialog .dlg-text {
+        text-align: left;
+        font-size: .28rem;
+        color: rgba(0,0,0,0.40);
+        line-height: .42rem;
+        flex: 1;
+        max-height: calc(100% - .78rem);
+        div {
+            height: 100%;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        .indent {
+            text-indent: 1em;
+        }
+    }
+    &.fit-dialog .dlg-btns button {
+        height: 1.04rem;
+    }
+}
