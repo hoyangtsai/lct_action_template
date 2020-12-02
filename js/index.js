@@ -1,6 +1,6 @@
-define("/mb/action/the_action/js/index", function(require, exports) {
+define("/mb/action/lct_action_template/js/index", function(require, exports) {
     var LocationOrigin = location.origin || 'https://qian.tenpay.com';
-    var LocationPathname = location.pathname || '/mb/action/the_action/index.shtml';
+    var LocationPathname = location.pathname || '/mb/action/lct_action_template/index.shtml';
 
     exports.init = function() {
         // eslint-disable-next-line no-undef
@@ -24,7 +24,7 @@ define("/mb/action/the_action/js/index", function(require, exports) {
                 initShare: function(title, desc) {
                     var shareConf = {
                         link: LocationOrigin + LocationPathname,
-                        img_url: LocationOrigin + "/mb/action/the_action/img/wx-share.png",
+                        img_url: LocationOrigin + "/mb/action/lct_action_template/img/wx-share.png",
                         title: title || '千万红包快来领！先到先得',
                         desc: desc || '生成2020感谢信还可抽大红包！',
                     };

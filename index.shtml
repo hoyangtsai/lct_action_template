@@ -12,11 +12,11 @@
         </script>
     </head>
     <body class="show-body-loading page-yqt-action">
-        <!--#include virtual="/mb/action/the_action/inc/rem.shtml" -->
+        <!--#include virtual="/mb/action/lct_action_template/inc/rem.shtml" -->
         <!-- 屏蔽左下角全局导航 -->
         <input type="hidden" class="js-widgets-back-home" data-show="false" />
 
-        <!--#include virtual="/mb/action/the_action/inc/page-loading.shtml" -->
+        <!--#include virtual="/mb/action/lct_action_template/inc/page-loading.shtml" -->
 
         <div class="page-index" id="vueBox">
             <hey-there :action="doAction"></hey-there>
@@ -65,20 +65,20 @@
                 });
             })();
         </script>
-        <script src="/mb/action/the_action/js/vue.min.js"></script>
+        <script src="/mb/action/lct_action_template/js/vue.min.js"></script>
         <!-- components -->
-        <script src="/mb/action/the_action/inc/js/fit-dialog.umd.js?{md5}"></script>
-        <script src="/mb/action/the_action/inc/js/fit-qr-code.umd.js?{md5}"></script>
-        <!-- <script src="/mb/action/the_action/inc/js/page-index.umd.js?{md5}"></script> -->
-        <script src="/mb/action/the_action/inc/js/hey-there.umd.js?{md5}"></script>
+        <script src="/mb/action/lct_action_template/inc/js/fit-dialog.umd.js?{md5}"></script>
+        <script src="/mb/action/lct_action_template/inc/js/fit-qr-code.umd.js?{md5}"></script>
+        <!-- <script src="/mb/action/lct_action_template/inc/js/page-index.umd.js?{md5}"></script> -->
+        <script src="/mb/action/lct_action_template/inc/js/hey-there.umd.js?{md5}"></script>
 
         <script type="text/javascript" data-role="script">
             var ua = navigator.userAgent;
             window.isIOS = /iphone|ipad/i.test(ua);
             window.isAndroid = /android/i.test(ua);
-            var url = __pkg("/mb/action/the_action/js/index.js?{md5}");
+            var url = __pkg("/mb/action/lct_action_template/js/index.js?{md5}");
             loadPageScript(
-                "/mb/action/the_action/js/index",
+                "/mb/action/lct_action_template/js/index",
                 [url],
                 function (page) {}
             );
