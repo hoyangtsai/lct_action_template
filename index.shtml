@@ -19,14 +19,15 @@
         <!--#include virtual="/mb/action/lct_action_template/inc/page-loading.shtml" -->
 
         <div class="page-index" id="vueBox">
+            <manual></manual>
             <hey-there :action="doAction"></hey-there>
+            <h1 style="margin-bottom: .2rem;">仓库地址二维码 by fit-qr-code</h1>
             <fit-qr-code
-                ref="qrcodeUrl"
-                code="https://www.tencentwm.com/mb/v4/index.shtml"
+                code="http://git.code.oa.com/G_FIT_AM_DEV/lct_action_template.git"
                 :width=180 :height=180>
             </fit-qr-code>
-            <div style="padding: 1rem 0; text-align: center;">
-                <button @click="handleRuleShow">活动规则</button>
+            <div style="padding: .4rem 0;">
+                <button class="button button1" @click="handleRuleShow">活动规则</button>
             </div>
             <fit-dialog class="rule-dialog" ref="ruleDialog">
                 <div class="rule-dialog__content">
@@ -69,8 +70,11 @@
         <!-- components -->
         <script src="/mb/action/lct_action_template/inc/js/fit-dialog.umd.js?{md5}"></script>
         <script src="/mb/action/lct_action_template/inc/js/fit-qr-code.umd.js?{md5}"></script>
-        <!-- <script src="/mb/action/lct_action_template/inc/js/page-index.umd.js?{md5}"></script> -->
-        <script src="/mb/action/lct_action_template/inc/js/hey-there.umd.js?{md5}"></script>
+        <!-- 引入一个组件集 -->
+        <script src="/mb/action/lct_action_template/inc/js/page-index.umd.js?{md5}"></script>
+        <!-- 或分别单一引入 -->
+        <!-- <script src="/mb/action/lct_action_template/inc/js/manual.umd.js?{md5}"></script>
+        <script src="/mb/action/lct_action_template/inc/js/hey-there.umd.js?{md5}"></script> -->
 
         <script type="text/javascript" data-role="script">
             var ua = navigator.userAgent;

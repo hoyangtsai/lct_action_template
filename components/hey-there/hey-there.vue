@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .hey-there {
-  margin-bottom: 1rem;
+  margin-bottom: .4rem;
   .h1-def {
     display: block;
     font-size: 2em;
