@@ -53,7 +53,7 @@ module.exports = function() {
     // record each import
     await imports.forEach((imp) => {
       // chop import path and ensure starting with one or two dot to avoid getting node_modules as import components
-      const matches = /from.*('|")\.{1,2}(.+)/.exec(imp);
+      const matches = /from.*('|")(\.{1,2}|@)(.+)/.exec(imp);
       
       if (matches.length > 0) {
         const cname = matches[2];
