@@ -5,7 +5,7 @@ const path = require('path');
 const md5File = require('md5-file');
 const fs = require('fs');
 
-let fileMeta = {};
+const fileMeta = {};
 
 async function outputEntry(filePath, fileMeta) {
   const config = rollupConfig(filePath);
@@ -27,8 +27,8 @@ async function outputEntry(filePath, fileMeta) {
   }
 }
 
-module.exports = function() {  
-  return through2.obj(async function(file, encoding, callback) {
+module.exports = function () {  
+  return through2.obj(async function (file, encoding, callback) {
     if (file.isStream()) {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
     }
@@ -63,11 +63,13 @@ module.exports = function() {
         if (!fileMeta[depBase]) {
           fileMeta[depBase] = {
             md5: '',
-            requireBy: [`${file.path}`]
-          }
+            requireBy: [`${file.path}`],
+          };
         } else if (fileMeta[depBase].requireBy.indexOf(file.path) < 0) {
-          fileMeta[depBase].requireBy =
-            [...fileMeta[depBase].requireBy, `${file.path}`];
+          fileMeta[depBase].requireBy = [
+            ...fileMeta[depBase].requireBy, 
+            `${file.path}`,
+          ];
         }
       }
     });
