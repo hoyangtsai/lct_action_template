@@ -7,6 +7,9 @@ module.exports = {
     define: true,
     $: true,
     Vue: true,
+    PluginError: true,
+    PLUGIN_NAME: true,
+    fitTheme: true,
   },
   parserOptions: {
     // parser: '@typescript-eslint/parser'

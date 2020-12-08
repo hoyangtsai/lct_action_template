@@ -23,7 +23,7 @@ const baseConfig = {
         resolve: ['.js', '.jsx', '.ts', '.tsx', '.vue', '.css'],
         entries: {
           '@': path.resolve(projectRoot),
-          'fitTheme': path.resolve(projectRoot, 'fit_ui/src/themes/default')
+          fitTheme: path.resolve(projectRoot, 'fit_ui/src/themes/default'),
         },
       }),
     ],
@@ -36,8 +36,8 @@ const baseConfig = {
       style: {
         postcssOptions: postcssConfig,
         postcssPlugins: [
-          ...postcssConfig.plugins
-        ]
+          ...postcssConfig.plugins,
+        ],
       },
       template: {
         isProduction: true,
@@ -57,7 +57,7 @@ const external = [
   // list external dependencies, exactly the way it is written in the import statement.
   // eg. 'jquery'
   'vue',
-  'html2canvas'
+  'html2canvas',
 ];
 
 // UMD/IIFE shared settings: output.globals
@@ -87,15 +87,16 @@ const unpkgConfig = {
   ],
 };
 
-String.prototype.capitalize = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1)
-}
+String.prototype.capitalize = function () {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+};
 
 function outputConfig(file) {
   const componentDirPath =  path.dirname(file);
 
   const componentBase = path.basename(file, '.vue');
-  const componentName = componentBase.split('-').map(s => s.capitalize()).join('');
+  const componentName = componentBase.split('-').map(s => s.capitalize())
+    .join('');
 
   if (fs.existsSync(file)) {
     copyTemplate(
@@ -105,24 +106,24 @@ function outputConfig(file) {
       [
         {
           match: /{{=ComponentName}}/g,
-          replace: componentName
+          replace: componentName,
         },
         { 
           match: /{{=ComponentPath}}/g,
-          replace: `./${componentBase}.vue`
+          replace: `./${componentBase}.vue`,
         },
         {
           match: /{{=ComponentTagName}}/g,
-          replace: `${componentName}.name`
+          replace: `${componentName}.name`,
         },
-      ]
-    )
+      ],
+    );
   }
 
   const entryFile = `${componentDirPath}/index.js`;
 
   if (fs.existsSync(entryFile)) {
-    const conf = {...unpkgConfig, ...{
+    const conf = { ...unpkgConfig, ...{
       input: entryFile,
       output: {
         file: `inc/js/${componentBase}.umd.js`,
@@ -131,8 +132,8 @@ function outputConfig(file) {
         format: 'umd',
         exports: 'named',
         globals,
-      }
-    }};
+      },
+    } };
 
     return conf;
   }

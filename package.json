@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp",
-    "lint": "./node_modules/.bin/eslint ./js/*.js",
-    "lint:fix": "./node_modules/.bin/eslint --fix ./js/*.js"
+    "lint": "./node_modules/.bin/eslint ./js/*.js ./build/*.js",
+    "lint:fix": "./node_modules/.bin/eslint --fix ./js/*.js ./build/*.js"
   },
   "husky": {
     "hooks": {

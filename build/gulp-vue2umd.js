@@ -16,7 +16,7 @@ async function outputEntry(filePath, fileMeta) {
     const outputOptions = {
       output: { ...config.output },
       external: { ...config.external },
-      plugins: { ...config.plugins }
+      plugins: { ...config.plugins },
     };
     await bundle.write(outputOptions);
     const fileBase = path.basename(filePath, '.vue');
