@@ -110,6 +110,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-restricted-syntax': 'off',
     'max-len': ['error', { code: 120 }],
-    'operator-linebreak': ['error', 'before']
+    'operator-linebreak': ['error', 'before'],
+    'no-var': 'off',
+    'object-shorthand': 'off',
+    'prefer-arrow-callback': 'off',
   },
 };
