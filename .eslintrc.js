@@ -3,6 +3,11 @@ module.exports = {
   env: {
     node: true,
   },
+  globals: {
+    define: true,
+    $: true,
+    Vue: true,
+  },
   parserOptions: {
     // parser: '@typescript-eslint/parser'
   },
@@ -88,7 +93,6 @@ module.exports = {
     'max-nested-callbacks': ['error', 3],
     'new-cap': ['error', { capIsNew: false }], // 允许非new使用首字母大写（兼容ts修饰器）
     'func-style': ['off', 'expression', { allowArrowFunctions: true }], // 需要后续修改
-    // 'max-len': ['error', { code: 120 }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'no-trailing-spaces': 'off',
     // 暂时关闭
@@ -105,7 +109,7 @@ module.exports = {
     '@typescript-eslint/no-this-alias': 'off',
     'no-underscore-dangle': 'off',
     'no-restricted-syntax': 'off',
-    "max-len": ["error", { "code": 120 }],
-    'operator-linebreak': ["error", "before"]
+    'max-len': ['error', { code: 120 }],
+    'operator-linebreak': ['error', 'before']
   },
 };

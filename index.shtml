@@ -59,11 +59,13 @@
         <script>
             window.aegisMonitor = null;
             (function () {
-                aegisMonitor = new Aegis({
-                    id: 3147, // 项目ID
-                    reportApiSpeed: true, // 接口测速
-                    reportAssetSpeed: true, // 静态资源测速
-                });
+                if (Aegis) {
+                    window.aegisMonitor = new Aegis({
+                        id: 3147, // 项目ID
+                        reportApiSpeed: true, // 接口测速
+                        reportAssetSpeed: true, // 静态资源测速
+                    });
+                }
             })();
         </script>
         <script src="/mb/action/lct_action_template/js/vue.min.js"></script>
