@@ -3,6 +3,11 @@ module.exports = {
   env: {
     node: true,
   },
+  globals: {
+    'define': true,
+    '$': true,
+    'Vue': true,
+  },
   parserOptions: {
     // parser: '@typescript-eslint/parser'
   },

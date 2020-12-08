@@ -4,7 +4,9 @@
   "description": "lct_web action template",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "lint": "./node_modules/.bin/eslint ./js/*.js",
+    "lint:fix": "./node_modules/.bin/eslint --fix ./js/*.js"
   },
   "husky": {
     "hooks": {
@@ -12,14 +14,8 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        "./node_modules/.bin/eslint --fix",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "./inc/js/**"
+    "./js/*.js": [
+      "./node_modules/.bin/eslint --fix"
     ]
   },
   "author": "keithytsai",
@@ -32,6 +28,7 @@
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-replace": "^2.3.2",
+    "@tencent/eslint-config-tencent": "^0.12.2",
     "@tencent/fit-h5-global": "^1.0.28",
     "@vue/compiler-sfc": "^3.0.0",
     "eslint": "^7.15.0",
