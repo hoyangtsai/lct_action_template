@@ -15,7 +15,7 @@ module.exports = function(dest, fileName, templPath, replaceq) {
       if (replaceq && Array.isArray(replaceq)) {
         replaceq.forEach(query => {
           template = template.replace(query.match, query.replace);
-        })
+        });
       }
       // mkdirp.sync(pathFn.dirname(fullPath));
       fs.writeFileSync(fullPath, template);
@@ -24,4 +24,4 @@ module.exports = function(dest, fileName, templPath, replaceq) {
   } catch (err) {
     throw err;
   }
-}
+};

@@ -56,7 +56,7 @@ module.exports = function () {
       const matches = /from.*('|")(\.{1,2}|@)(.+)/.exec(imp);
       
       if (matches.length > 0) {
-        const cname = matches[2];
+        const cname = matches[3]; // after one or two dots match
         const dep = path.resolve(fileDir, cname);
         const depBase = path.basename(dep);
 
