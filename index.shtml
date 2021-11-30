@@ -23,7 +23,7 @@
             <hey-there :action="doAction"></hey-there>
             <h1 style="margin-bottom: .2rem;">仓库地址二维码 by fit-qr-code</h1>
             <fit-qr-code
-                code="http://git.code.oa.com/G_FIT_AM_DEV/lct_action_template.git"
+                code="https://github.com/hoyangtsai/lct_action_template"
                 :width=180 :height=180>
             </fit-qr-code>
             <div style="padding: .4rem 0;">

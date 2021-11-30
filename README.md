@@ -1,6 +1,6 @@
 # 理财通活动模版
 
-理财通 v4 开发仓库 <http://git.code.oa.com/fmp/lct_web.git> vue 框架活动开发模版
+理财通 v4 开发仓库 vue 框架活动开发模版
 
 ## 如何开始
 
@@ -27,7 +27,7 @@
 
 ```index.js
 define("/mb/action/活动名称/js/index", function(require, exports) {
-    var LocationOrigin = location.origin || 'https://qian.tenpay.com';
+    var LocationOrigin = location.origin || 'https://www.example.com';
     var LocationPathname = location.pathname || '/mb/action/活动名称/index.shtml';
 
     exports.init = function() {
